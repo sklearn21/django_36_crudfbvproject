@@ -19,3 +19,9 @@ def create_view(request):
             form.save()
         return redirect('/')
     return render(request, 'testapp/create.html', {'form': form})
+
+
+def delete_view(request, id):
+    employee = Employee.objects.get(id=id)
+    employee.delete()
+    return redirect('/')
