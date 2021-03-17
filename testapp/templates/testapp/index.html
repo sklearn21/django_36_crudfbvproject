@@ -1,0 +1,25 @@
+{%extends 'testapp/base.html'%}
+    {%block body_block%}
+        <h1>Employee Information Dashboard</h1>
+        <table  border="2">
+            <thead>
+                <th align="center">Employee No.</th>
+                <th align="center">Employee Name</th>
+                <th align="center">Employee Salary</th>
+                <th align="center">Employee Address</th>
+                <th>Actions</th>
+            </thead>
+            {% for emp in employees %}
+            <tr>
+                <td align="center">{{emp.eno}}</td>
+                <td align="center">{{emp.ename}}</td>
+                <td align="center">{{emp.esal}}</td>
+                <td align="center">{{emp.eaddr}}</td>
+                <td align="center"><a href="#" >  Update  </a>  <a href="#"> Delete  </a>  </td>
+            </tr>
+            {%endfor%}
+        </table>
+        <br>
+        <br>
+        <a href="/create" class="btn btn-success btn-lg"> Add New Employee</a>
+    {%endblock%}
